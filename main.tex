@@ -1,0 +1,103 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                Informações sobre o Autor e Distribuição          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Template Desenvolvido por: 
+% Maurício Fernandes de Oliveira Assis
+% Gerente de Projetos da Power Jr.
+%
+% Objetivo:
+% Este template foi criado para a Power Jr. com o propósito de padronizar 
+% a elaboração de memoriais descritivos, garantindo clareza, organização e 
+% profissionalismo na apresentação de projetos de climatização e outras 
+% áreas de engenharia.
+
+% Estrutura do Template:
+% - Arquivo `corpo.tex`:
+%   Este arquivo é destinado à construção do conteúdo principal do memorial 
+%   descritivo. É nele que as informações específicas de cada projeto devem 
+%   ser inseridas, como descrição, especificações técnicas e outros detalhes 
+%   relevantes.
+% 
+% - Arquivo `lib/power.sty`:
+%   Este arquivo contém as configurações de formatação do documento, incluindo:
+%   estilos de texto, estrutura das seções, sumário e outras configurações. 
+%   Alterações podem ser realizadas neste arquivo para adaptar o template 
+%   às necessidades específicas de cada projeto.
+
+% Dados de Contato da Empresa:
+% Empresa: Power Jr.
+% Endereço: Av. Manoel Novais, 1064, Centro, CEP: 47600-000, Bom Jesus da Lapa, BA
+% Email: empresa.powerjr@gmail.com
+
+% Informações Adicionais:
+% - Data de criação do template: 18/11/2024
+% - Repositório GitHub para contribuições e atualizações:
+%   https://github.com/mauriciofernandes123
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\documentclass[a4paper, 12pt]{article}
+
+% Pacotes essenciais
+\usepackage[brazil]{babel}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{background}  % Para definir a marca d'água
+\usepackage{hyperref} % Para criar links para as seções
+\usepackage{longtable}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lib/power}
+\usepackage{lipsum}	
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+\usepackage{booktabs}  % Pacote necessário para \toprule, \midrule, \bottomrule
+\usepackage{amsmath} % Pacote para formatação de equações matemáticas
+\usepackage{amsfonts} % Para fontes matemáticas
+\usepackage{amssymb} % Para símbolos matemáticos
+
+
+% Definir margens
+\geometry{top=3cm, bottom=2cm, left=2.5cm, right=2.5cm}
+
+% Definir Times New Roman como fonte padrão
+\renewcommand{\rmdefault}{ptm} % Usa Times New Roman para texto
+\renewcommand{\sfdefault}{phv} % Usa Helvetica para texto sem serifa (opcional)
+\renewcommand{\ttdefault}{pcr} % Usa Courier como fonte monoespaçada
+
+% Definir tamanho de fonte para 12pt
+\renewcommand{\normalsize}{\fontsize{12}{14}\selectfont}
+
+% Documento
+\begin{document}
+
+% Capa
+\capapower
+    {logo.jpeg} % Caminho da imagem do logo
+    {TEMPLATE PARA POWER JR.} % Título
+    {Por: Maurício Fernandes} % Localização
+    {Hiago Neco} % Proprietário
+    {Vinicius Neves} % Responsável
+    {17 de Novembro de 2024} % Data
+
+\NoBgThispage
+\imprimirgotadagua
+
+\imprimircontracapa
+
+\imprimirlistadetabelas
+\imprimirlistadeilustracoes
+\imprimirsumario
+
+\imprimirrodape
+
+\input{corpo}
+
+
+
+\end{document}

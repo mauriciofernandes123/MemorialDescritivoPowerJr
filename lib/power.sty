@@ -1,0 +1,320 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                Informações sobre o Autor e Distribuição          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Template Desenvolvido por: 
+% Maurício Fernandes de Oliveira Assis
+% Gerente de Projetos da Power Jr.
+%
+% Objetivo:
+% Este template foi criado para a Power Jr. com o propósito de padronizar 
+% a elaboração de memoriais descritivos, garantindo clareza, organização e 
+% profissionalismo na apresentação de projetos de climatização e outras 
+% áreas de engenharia.
+
+% Estrutura do Template:
+% - Arquivo `corpo.tex`:
+%   Este arquivo é destinado à construção do conteúdo principal do memorial 
+%   descritivo. É nele que as informações específicas de cada projeto devem 
+%   ser inseridas, como descrição, especificações técnicas e outros detalhes 
+%   relevantes.
+% 
+% - Arquivo `lib/power.sty`:
+%   Este arquivo contém as configurações de formatação do documento, incluindo:
+%   estilos de texto, estrutura das seções, sumário e outras configurações. 
+%   Alterações podem ser realizadas neste arquivo para adaptar o template 
+%   às necessidades específicas de cada projeto.
+
+% Dados de Contato da Empresa:
+% Empresa: Power Jr.
+% Endereço: Av. Manoel Novais, 1064, Centro, CEP: 47600-000, Bom Jesus da Lapa, BA
+% Email: empresa.powerjr@gmail.com
+
+% Informações Adicionais:
+% - Data de criação do template: 18/11/2024
+% - Repositório GitHub para contribuições e atualizações:
+%   https://github.com/mauriciofernandes123
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ProvidesPackage{power}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       Configuração  Capa     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Configuração para a capa
+\newcommand{\capapower}[6]{%
+    \begin{titlepage}
+        
+        \begin{center}
+            \includegraphics[width=0.3\textwidth]{#1}\\[0.1cm] % Logo
+            \textcolor{orange}{\rule{\textwidth}{0.5mm}}\\[1cm]
+            {\LARGE \textbf{MEMORIAL DESCRITIVO}}\\[1.5cm]
+            {\Large \textbf{#2\\ #3}}\\[2cm] % Título e localização
+            \vfill
+            \textbf{Proprietário: #4}\\
+            \textbf{Profissional Responsável: #5}\\
+            \textbf{Data de Elaboração: #6}\\
+            \vfill
+        \end{center}
+        
+        
+        
+        % Rodapé centralizado
+        
+        \begin{center}
+        \vfill
+            \textcolor{orange}{\rule{\textwidth}{0.5mm}}\\[0.1cm]
+            \textbf{Universidade Federal do Oeste da Bahia}\\
+            Av. Manoel Novais, 1064, Centro, CEP: 47600-000, Bom Jesus da Lapa, BA\\
+            Email: empresa.powerjr@gmail.com
+        \end{center}
+        
+        \thispagestyle{empty} % Remove a numeração da página da capa
+        % Desativa a marca d'água na capa
+        \NoBgThispage
+    \end{titlepage}
+}
+%_______________________________________________________________________
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       Configuração Contra Capa     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\imprimircontracapa}{
+ 
+\begin{center}  
+    \includegraphics[width=0.3\textwidth]{logo.jpeg}\\[0.1cm] % Logo
+    \textcolor{orange}{\rule{\textwidth}{0.5mm}}\\[1cm]  
+\end{center}  
+
+\begin{center}
+\begin{tabular}{|c|c|l|}  
+    \hline  
+    \textbf{Arquivo:} & \textbf{Memorial Descritivo: Power Jr.} & \textbf{Data:} \\
+    \hline  
+    \textbf{Assunto:} & Memorial Descritivo & \\
+    \hline  
+    \textbf{Local da Obra:} & Bom Jesus da Lapa & \\
+    \hline  
+    \textbf{Obra:} & Power Projetos & \\
+    \hline  
+    \textbf{Engº Mecânico:} & Fulano &  \\
+    \hline  
+    \textbf{Proprietário:} & Fulana & \\
+    \hline  
+\end{tabular}  
+\end{center}
+
+\vspace{1cm}  
+
+\noindent  
+\textbf{HISTÓRICO DE REVISÕES}  
+\vspace{0.5cm}  
+
+\begin{center}
+\begin{tabular}{|c|l|l|c|}  
+    \hline  
+    \textbf{Revisão} & \textbf{Descrição da Revisão} & \textbf{Responsável} & \textbf{Data} \\
+    \hline  
+    2 & Revisão 2 & Vinicius Neves & 01/08/2016 \\
+    \hline  
+    1 & Revisão 1 & Hiago Neco & 28/07/2016 \\
+    \hline  
+    0 & Emissão inicial & Samuel Souza & 20/07/2016 \\
+    \hline  
+\end{tabular}  
+\end{center}
+
+\vspace{1cm}  
+
+\begin{center}
+    \vfill
+    \textcolor{orange}{\rule{\textwidth}{0.5mm}}\\[0.1cm]
+    \textbf{Universidade Federal do Oeste da Bahia}\\
+    Av. Manoel Novais, 1064, Centro, CEP: 47600-000, Bom Jesus da Lapa, BA\\
+    Email: empresa.powerjr@gmail.com
+\end{center}
+        
+\thispagestyle{empty} % Remove a numeração da página da capa
+% Desativa a marca d'água na capa
+
+}
+%_______________________________________________________________________
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       Configuração Marca d1agua      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Comando para definir a marca d'água
+\newcommand{\imprimirgotadagua}{
+    \backgroundsetup{
+        scale=1,                      % Escala da imagem
+        color=black,                  % Cor (vai ser ignorada porque a imagem é transparente)
+        opacity=0.08,                 % Transparência (valor entre 0 e 1)
+        angle=0,                      % Ângulo da imagem
+        position=current page.south,  % Posição inicial (ajustável)
+        vshift=15cm,                  % Deslocamento vertical
+        hshift=0.5cm,                 % Deslocamento horizontal
+        contents={\includegraphics[width=0.4\textwidth]{logo.jpeg}}  % Caminho da imagem
+    }
+}
+%_______________________________________________________________
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       Configuração das Páginas      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Espaçamento entre linhas (1.5)
+\renewcommand{\baselinestretch}{1.5}
+
+% Margens do documento
+\RequirePackage{geometry}
+\geometry{
+    top=3cm,
+    bottom=3.5cm, % Aumenta a margem inferior para comportar o rodapé
+    left=3cm,
+    right=2cm
+}
+
+% Configurações de espaçamento nos títulos
+\RequirePackage{titlesec}
+
+% Section
+\titleformat{\section}[block]
+  {\normalfont\bfseries}{\thesection}{1em}{} % Formato da numeração (seção)
+\titlespacing*{\section}
+  {0pt}{1.5em}{1em} % Espaçamento antes e depois das seções
+
+% Subsection
+\titleformat{\subsection}[block]
+  {\normalfont\bfseries}{\thesubsection}{1em}{} % Formato da numeração (subseção)
+\titlespacing*{\subsection}
+  {0pt}{1em}{0.5em} % Espaçamento antes e depois das subseções
+
+% Subsubsection
+\titleformat{\subsubsection}[block]
+  {\normalfont}{\thesubsubsection}{1em}{} % Formato da numeração (subsubseção)
+\titlespacing*{\subsubsection}
+  {0pt}{0.8em}{0.8em} % Espaçamento antes e depois das subsubseções
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Configurações de cor do sumário    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,               % Ativa os links coloridos
+    linkcolor=black,          % Cor dos links internos (seções, referências, etc.)
+    citecolor=black,          % Cor das citações
+    urlcolor=black            % Cor dos links de URL
+}
+%______________________________________________________________
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       Configurações de legendas     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{caption}
+
+\DeclareCaptionFont{red}{\color{red}}
+\DeclareCaptionFont{blue}{\color{blue}}
+\captionsetup{
+    labelsep=endash,         % Aplica em todos ambientes
+    justification=centerlast % Centraliza as legendas
+}
+\captionsetup[figure]{labelfont={bf}}
+\captionsetup[table]{labelfont=bf}
+\captionsetup[quadro]{labelfont=bf}
+%_________________________________________________________
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       Configuração do rodapé      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Limpa o cabeçalho e o rodapé
+
+% Definir a função para o rodapé
+\newcommand{\imprimirrodape}{%
+    % Rodapé centralizado
+    \fancyfoot[C]{%
+        \vspace{-1.4cm} % Adiciona espaço para garantir que o rodapé não fique cortado
+        \textcolor{orange}{\rule{\textwidth}{0.5mm}}\\
+        \textbf{Universidade Federal do Oeste da Bahia}\\
+        Av. Manoel Novais, 1064, Centro, CEP: 47600-000, Bom Jesus da Lapa, BA\\
+        Email: empresa.powerjr@gmail.com
+    }
+
+    % Coloca a numeração de página à direita
+    \fancyfoot[R]{\thepage}
+
+    \renewcommand{\footrulewidth}{0pt} % Remove a linha horizontal padrão
+    \renewcommand{\headrulewidth}{0pt} % Remove a linha horizontal no cabeçalho
+}
+%____________________________________________________________________________
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Configurações  do sumário    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tocloft}
+
+% Personalizações do espaçamento entre os títulos e os itens no sumário
+\setlength{\cftbeforesecskip}{0.5em} % Diminui o espaçamento antes das seções
+\setlength{\cftbeforesubsecskip}{0.3em} % Diminui o espaçamento antes das subseções
+\setlength{\cftbeforesubsubsecskip}{0.2em} % Diminui o espaçamento antes das subsubseções
+
+
+% Definir comandos para o sumário
+\newcommand{\imprimirsumario}{%  
+    
+    \tableofcontents % Gera o sumário  
+    % Coloca a numeração de página à direita
+    
+    \cleardoublepage % Para que a próxima página inicie em uma página ímpar  
+}
+
+%_________________________________________________________________
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Configurações  lista de ilustrações    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Comando para a lista de ilustrações
+\newcommand{\imprimirlistadeilustracoes}{
+    \cleardoublepage  % Inicia uma nova página
+    \thispagestyle{empty}  % Remove a numeração da página
+    
+    \listoffigures  % Gera a lista de figuras
+        
+    \thispagestyle{empty} % Remove a numeração da página da capa
+       
+    \cleardoublepage  % Garante que a próxima página inicie em uma página
+}
+%___________________________________________________________________
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Configurações  lista de tabelas   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Comando para a lista de tabelas
+\newcommand{\imprimirlistadetabelas}{
+    \cleardoublepage  % Inicia uma nova página
+    \thispagestyle{empty}  % Remove a numeração da página
+    
+    \listoftables  % Gera a lista de tabelas
+   
+    \thispagestyle{empty} % Remove a numeração da página da capa
+    
+    \cleardoublepage  % Garante que a próxima página inicie em uma página ímpar
+}
+%________________________________________________________________________
